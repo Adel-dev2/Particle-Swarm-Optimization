@@ -42,7 +42,7 @@ print(f"  div_low={div_low:.3f}  div_high={div_high:.3f}")
 # ── Phase 1: Training ───────────────────────────────────────────
 N_PARTICLES   = 30
 T_MAX         = 200
-N_EPISODES    = 400
+N_EPISODES    = 1000
 
 agent = QLearningAgent(alpha=0.1, gamma=0.9, epsilon=0.5)
 
@@ -82,7 +82,7 @@ for episode in range(N_EPISODES):
         f_prev = f_cur
 
     # Decay exploration after each episode
-    agent.decay_epsilon(decay=0.001, min_epsilon=0.05)
+    agent.decay_epsilon(decay=0.0005, min_epsilon=0.05)
 
     if episode % 50 == 0:
         print(f"Episode {episode:4d} | eps={agent.epsilon:.3f} | final_tour={f_cur:.1f}")
