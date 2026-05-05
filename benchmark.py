@@ -18,7 +18,7 @@ INSTANCES = {
 }
 
 N_RUNS = 10  # number of independent runs to compute mean/std
-N_PARTICLES = 30
+N_PARTICLES = 100
 T_MAX = 200
 
 # Load RL Agent & Thresholds

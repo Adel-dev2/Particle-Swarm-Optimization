@@ -34,13 +34,13 @@ sample_pool = train_matrices[:5] * 3 + train_matrices[5:]
 print("Running calibration...")
 div_low, div_high = calibrate_thresholds(
     [train_matrices[0], train_matrices[3]],   # eil51, kroA100
-    n_particles=30, T_max=200, n_runs=20
+    n_particles=100, T_max=200, n_runs=20
 )
 np.save('saved/div_thresholds.npy', [div_low, div_high])
 print(f"  div_low={div_low:.3f}  div_high={div_high:.3f}")
 
 # ── Phase 1: Training ───────────────────────────────────────────
-N_PARTICLES   = 30
+N_PARTICLES   = 100
 T_MAX         = 200
 N_EPISODES    = 1000
 
